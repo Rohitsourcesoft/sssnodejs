@@ -7,4 +7,5 @@ router.get('/', function(request, response, next) {
 		response.render('index', { title: 'Admin Login',error_message:'',error:''});
 });*/
 
+
 module.exports = router;
