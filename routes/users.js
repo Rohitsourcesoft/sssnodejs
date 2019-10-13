@@ -13,7 +13,7 @@ router.get('/login', function(request, response, next) {
 router.post('/login',loginController.validate('login'),loginController.login);
 
 
-router.get('/logout',loginController.logout);
+router.get('/gernatepassword',loginController.gernatepassword);
 
 
 router.get('/dashboard', function(request, response, next) { 
