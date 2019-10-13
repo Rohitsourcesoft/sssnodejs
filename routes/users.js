@@ -13,4 +13,13 @@ router.get('/login', function(request, response, next) {
 router.post('/login',loginController.validate('login'),loginController.login);
 
 
+router.get('/logout',loginController.logout);
+
+
+router.get('/dashboard', function(request, response, next) { 
+		response.render('dashboard/index', { title: 'Dashbaord'});
+});
+
+
+
 module.exports = router;
