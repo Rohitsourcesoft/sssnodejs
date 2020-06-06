@@ -1,11 +1,13 @@
 var userService = require(process.cwd()+'/models/userModel');
 var bcrypt = require('bcryptjs');
+var connection = require(process.cwd()+'/config/database');
 const { check, validationResult } = require('express-validator');
 exports.gernatepassword = (method) => 
 {       
     var password="123456";
     var hash = bcrypt.hashSync(password, 10);
-   // console.log(hash);
+    // var queryString = 'UPDATE `user` SET `PASSWORD`="'+hash+'" WHERE `ID`=1';
+    //connection.query(queryString, function(err,result) {});
 }
 exports.validate = (method) => 
 {       
@@ -58,5 +60,3 @@ exports.login = function(request, response)
             }
     });
 }
-
-//sss
