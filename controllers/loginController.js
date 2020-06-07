@@ -57,7 +57,7 @@ exports.login = function(request, response)
             {
                 var responsedata=JSON.stringify(data);
                 var userdata=JSON.parse(responsedata);
-                return response.redirect('/dashboard'); 
+                return response.redirect('/dashboard',{title:'E-Learning',layout:true}); 
             }
                 
     });
