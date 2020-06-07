@@ -18,7 +18,7 @@ router.get('/gernatepassword',loginController.gernatepassword);
 
 
 router.get('/dashboard', function(request, response, next) { 
-		response.render('dashboard/index', { title: 'Dashbaord',layout:true});
+		response.render('dashboard/index', {title:'E-Learning',layout:true});
 });
 
 
