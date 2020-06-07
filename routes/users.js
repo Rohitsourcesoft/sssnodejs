@@ -7,6 +7,7 @@ var loginController = require(process.cwd()+'/controllers/loginController');
 router.get('/', function(request, response, next) { 
 		response.render('index', {layout: false,title: 'Admin Login',error_message:'',error:''});
 });
+
 router.get('/login', function(request, response, next) { 
 		response.render('index', {layout: false,title: 'Admin Login',error_message:'',error:''});
 });

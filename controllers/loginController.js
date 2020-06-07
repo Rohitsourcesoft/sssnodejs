@@ -27,28 +27,29 @@ exports.login = function(request, response)
             /**************Form validate****************/
             if(!errors.isEmpty())
             {
-                return response.render('index', { title: 'Admin Login',error_message:'',
+                return response.render('index', {layout: false, title: 'Admin Login',error_message:'',
                                                   error: errors.mapped()});
             }
         
             /**********pass form validation then check user credintial*************/
             userService.authenticate(request.body.userid, request.body.password,function (error,data) {
+            
             if (error==1) 
             {
                  //   response.json({ success: false, message: 'Invalid user ID and password' });
-                return response.render('index', { title: 'Admin Login',
+                return response.render('index', {layout: false,title: 'Admin Login',
                                            error_message: 'User ID does not exist!!',error:''});
             }
             else if (error==2) 
             {
                  //   response.json({ success: false, message: 'Invalid user ID and password' });
-                return response.render('index', { title: 'Admin Login',
+                return response.render('index', {layout: false, title: 'Admin Login',
                                            error_message: 'Password does not exist!!',error:''});
             }
             else if (error==3) 
             {
                  //   response.json({ success: false, message: 'Invalid user ID and password' });
-                return response.render('index', { title: 'Admin Login',
+                return response.render('index', {layout: false, title: 'Admin Login',
                                                 error_message: 'Your account had been inactive!!',
                                                 error:''});
             }
@@ -58,5 +59,6 @@ exports.login = function(request, response)
                 var userdata=JSON.parse(responsedata);
                 return response.redirect('/dashboard'); 
             }
+                
     });
 }
